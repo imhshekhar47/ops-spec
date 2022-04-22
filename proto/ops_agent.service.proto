@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option go_package="./pb";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "common.proto";
+import "agent.proto";
+
+package pb;
+
+service OpsAgentService {
+
+    //------------ Agent --------------//
+
+    // returns agent info
+    rpc GetAgent(google.protobuf.Empty) returns (Agent) {
+        option(google.api.http) = {
+            get: "/api/v1/agent"
+        };
+    };
+
+    // return agent-health
+    rpc GetAgentHealth(google.protobuf.Empty) returns (Health) {
+        option (google.api.http) = {
+            get: "/api/v1/agent/health"
+        };
+    };
+}

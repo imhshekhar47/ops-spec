@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option go_package="./pb";
+
+import "google/protobuf/timestamp.proto";
+
+
+message Metadata {
+    google.protobuf.Timestamp timestamp = 1;
+    string version = 2;
+}
+
+message Pair {
+    string key = 1;
+    string value = 2;
+}
+
+enum StatusCode {
+    DOWN = 0;
+    UP = 1;
+    WARN = 2;
+}
+
+message Health {
+    google.protobuf.Timestamp timestamp = 1;
+    StatusCode status = 2;
+}
+
