@@ -13,14 +13,14 @@ service OpsAgentService {
 
     //------------ Agent --------------//
 
-    // returns agent info
+    // returns agent
     rpc GetAgent(google.protobuf.Empty) returns (Agent) {
         option(google.api.http) = {
             get: "/api/v1/agent"
         };
     };
 
-    // return agent-health
+    // return agent health
     rpc GetAgentHealth(google.protobuf.Empty) returns (Health) {
         option (google.api.http) = {
             get: "/api/v1/agent/health"

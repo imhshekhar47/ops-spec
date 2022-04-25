@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option go_package="./pb";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "common.proto";
+import "admin.proto";
+
+package pb;
+
+service OpsAdminService {
+
+    // returns admin
+    rpc GetAdmin(google.protobuf.Empty) returns (Admin) {
+        option (google.api.http) = {
+            get: "/api/v1/admin"
+        };
+    };
+
+    rpc GetAdminHealth(google.protobuf.Empty) returns (Health) {
+        option (google.api.http) = {
+            get: "/api/v1/admin/health"
+        };
+    };
+
+}
