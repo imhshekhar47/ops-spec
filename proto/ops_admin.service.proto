@@ -6,6 +6,7 @@ import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "common.proto";
 import "admin.proto";
+import "agent.proto";
 
 package pb;
 
@@ -18,10 +19,14 @@ service OpsAdminService {
         };
     };
 
+    // returns admin health
     rpc GetAdminHealth(google.protobuf.Empty) returns (Health) {
         option (google.api.http) = {
             get: "/api/v1/admin/health"
         };
     };
+
+    // register agent
+    rpc Register(Agent) returns (google.protobuf.Empty);
 
 }

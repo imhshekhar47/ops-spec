@@ -27,6 +27,4 @@ service OpsAgentService {
         };
     };
 
-    // register agent
-    rpc Register(Agent) returns (google.protobuf.Empty);
 }
