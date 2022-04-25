@@ -26,4 +26,7 @@ service OpsAgentService {
             get: "/api/v1/agent/health"
         };
     };
+
+    // register agent
+    rpc Register(Agent) returns (google.protobuf.Empty);
 }
