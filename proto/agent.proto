@@ -9,3 +9,11 @@ message Agent {
     string uuid = 2;
     string address = 3; 
 }
+
+message AgentList {
+    repeated Agent items = 1;
+}
+
+message AgentRequest {
+    string uuid = 1;
+}

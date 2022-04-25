@@ -29,4 +29,18 @@ service OpsAdminService {
     // register agent
     rpc Register(Agent) returns (google.protobuf.Empty);
 
+    // returns list of agent
+    rpc GetAgentList(google.protobuf.Empty) returns(AgentList) {
+        option (google.api.http) = {
+            get: "/api/v1/admin/agent"
+        };
+    };
+
+    // return agent by id
+    rpc GetAgentById(AgentRequest) returns (Agent) {
+        option (google.api.http) = {
+            get: "/api/v1/admin/agent/{uuid}"
+        };
+    };
+
 }
