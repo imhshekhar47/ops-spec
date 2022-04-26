@@ -27,4 +27,11 @@ service OpsAgentService {
         };
     };
 
+
+    // return list of server {key: uuid, value: Name }
+    rpc GetAgentServer(google.protobuf.Empty) returns (PairList) {
+        option (google.api.http) = {
+            get: "/api/v1/agent/server"
+        };
+    };
 }
