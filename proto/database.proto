@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option go_package="./pb";
+
+import "common.proto";
+
+message Database {
+	string agentId = 1;
+	string uuid = 2;
+	string hostname = 3;
+	StatusCode status = 4;
+}

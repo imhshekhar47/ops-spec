@@ -30,3 +30,16 @@ message Health {
     StatusCode status = 2;
 }
 
+message GeoLocation {
+    string latitude  = 1;
+    string longitude  = 2;
+}
+
+message HierarchyInfo {
+    string group       = 1;
+	string component   = 2;
+	string environment = 3;
+	string site        = 4;
+	GeoLocation location = 5;
+}
+

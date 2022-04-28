@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package="./pb";
+
+import "common.proto";
+import "database.proto";
+
+message Server {
+    string agentId = 1;
+    string uuid = 2;
+    string hostname = 3;
+    StatusCode status = 4;
+
+    repeated Database databases  = 5; 
+}
+
+message ServerList {
+    repeated Server items = 1;
+}
+
+message ServerRequest {
+    string uuid = 1;
+}

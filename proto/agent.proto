@@ -3,11 +3,15 @@ syntax = "proto3";
 option go_package="./pb";
 
 import "common.proto";
+import "server.proto";
 
 message Agent {
     Metadata meta = 1;
     string uuid = 2;
     string address = 3; 
+    
+    HierarchyInfo info = 4;
+    Server server = 5;
 }
 
 message AgentList {

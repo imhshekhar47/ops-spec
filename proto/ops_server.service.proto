@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package="./pb";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "common.proto";
+import "server.proto";
+
+package pb;
+
+service OpsServerService {
+
+    //------------ Server --------------//
+    rpc GetServer(ServerRequest) returns (Server) {
+        option (google.api.http) = {
+            get: "/api/v1/server/{uuid}"
+        };
+    }
+}
