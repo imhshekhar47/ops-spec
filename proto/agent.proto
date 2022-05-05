@@ -9,9 +9,10 @@ message Agent {
     Metadata meta = 1;
     string uuid = 2;
     string address = 3; 
+    string status = 4;
     
-    HierarchyInfo info = 4;
-    Server server = 5;
+    HierarchyInfo info = 5;
+    Server server = 6;
 }
 
 message AgentList {
