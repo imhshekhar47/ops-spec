@@ -20,9 +20,10 @@ message InfraData {
 
 message InfraNode {
     string id = 1;
-    InfraNode parent = 2;
-    repeated InfraNode children = 3;
-    InfraData data = 4;
+    string label = 2;
+    string parent_id = 3;
+    repeated InfraNode children = 4;
+    InfraData data = 5;
 }
 
 message InfraNodeLink {
