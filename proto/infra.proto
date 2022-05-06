@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option go_package="./pb";
+
+import "common.proto";
+
+enum NodeType {
+    GROUP = 0;
+    COMPONENT = 1;
+    ENVIRONMENT = 2;
+    SERVER = 3;
+    DATABASE = 4;
+    PROCESS = 5;
+}
+
+message InfraData {
+    NodeType nodeType = 1;
+    HierarchyInfo info = 2;
+}
+
+message InfraNode {
+    string id = 1;
+    InfraNode parent = 2;
+    repeated InfraNode children = 3;
+    InfraData data = 4;
+}
+
+message InfraNodeLink {
+    string from_id = 1;
+    string to_id = 2;
+}
+
+message Infra {
+    repeated InfraNode nodes = 1;
+    repeated InfraNodeLink links = 2;
+
+    InfraNode root = 3;
+}

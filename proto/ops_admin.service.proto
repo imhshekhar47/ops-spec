@@ -7,6 +7,7 @@ import "google/protobuf/empty.proto";
 import "common.proto";
 import "admin.proto";
 import "agent.proto";
+import "infra.proto";
 
 package pb;
 
@@ -42,5 +43,13 @@ service OpsAdminService {
             get: "/api/v1/admin/agent/{uuid}"
         };
     };
+
+
+    // returns infra hierarchy
+    rpc GetInfraTree(google.protobuf.Empty) returns (Infra) {
+        option (google.api.http) = {
+            get: "/api/v1/admin/infra"
+        };
+    } 
 
 }
