@@ -16,7 +16,10 @@ enum NodeType {
 
 message InfraData {
     NodeType nodeType = 1;
-    HierarchyInfo info = 2;
+    string uuid = 2;
+    StatusCode status = 3;
+    HierarchyInfo info = 4;
+    repeated string tags = 5;
 }
 
 message InfraNode {
