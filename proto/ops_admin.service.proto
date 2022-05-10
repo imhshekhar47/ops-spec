@@ -46,7 +46,7 @@ service OpsAdminService {
 
 
     // returns infra hierarchy
-    rpc GetInfra(google.protobuf.Empty) returns (Infra) {
+    rpc GetInfra(google.protobuf.Empty) returns (InfraNode) {
         option (google.api.http) = {
             get: "/api/v1/admin/infra"
         };

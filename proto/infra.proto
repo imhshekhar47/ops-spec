@@ -31,10 +31,3 @@ message InfraNodeLink {
     string from_id = 1;
     string to_id = 2;
 }
-
-message Infra {
-    repeated InfraNode nodes = 1;
-    repeated InfraNodeLink links = 2;
-
-    InfraNode root = 3;
-}
